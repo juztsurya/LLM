@@ -1,0 +1,8 @@
+from sklearn.feature_extraction.text import CountVectorizer
+text = input("Enter a sentence: ") # Take input sentence
+vectorizer = CountVectorizer() # Create CountVectorizer object
+bow = vectorizer.fit_transform([text]) # Generate BoW representation
+# Display vocabulary and vector
+print("Vocabulary:", vectorizer.get_feature_names_out()) 
+print("BoW Vector:")
+print(bow.toarray())
