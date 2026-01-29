@@ -1,0 +1,13 @@
+import torch
+from transformers import BertTokenizer, BertModel
+# Load BERT tokenizer and model
+tokenizer = BertTokenizer.from_pretrained("bert-base-uncased") 
+model = BertModel.from_pretrained("bert-base-uncased")
+text = input("Enter a sentence: ") # Take input sentence
+inputs = tokenizer(text, return_tensors="pt") # Convert sentence into BERT input format
+outputs = model(**inputs) # Get model outputs
+cls_embedding = outputs.last_hidden_state[:, 0, :]  # Extract CLS token embedding
+# Display embedding
+print("BERT CLS Embedding Shape:", cls_embedding.shape)
+print("BERT Embedding:")
+print(cls_embedding)
