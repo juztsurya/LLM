@@ -1,0 +1,7 @@
+from transformers import AutoTokenizer
+tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased") # Load BERT tokenizer
+text = input("Enter text: ") # Take input text from user
+tokens = tokenizer.tokenize(text) # Perform subword tokenization
+token_ids = tokenizer.encode(text) # Convert tokens to token IDs
+print("Subword Tokens:", tokens) # Display tokens and IDs
+print("Token IDs:", token_ids)
