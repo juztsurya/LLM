@@ -1,0 +1,9 @@
+from transformers import pipeline
+sentiment_analyzer = pipeline("sentiment-analysis") # Load sentiment analysis pipeline
+text = input("Enter a sentence for sentiment analysis: ") # Take user input
+result = sentiment_analyzer(text) # Perform sentiment analysis
+# Display result
+label = result[0]['label']
+score = result[0]['score']
+print("Sentiment:", label)
+print("Confidence Score:", round(score, 2))
