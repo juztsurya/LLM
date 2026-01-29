@@ -1,0 +1,7 @@
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import sent_tokenize
+text = input("Enter text: ") # Take input text from user
+sentences = sent_tokenize(text) # Split text into sentences
+print("Sentence Tokens:") # Display sentences
+for s in sentences
