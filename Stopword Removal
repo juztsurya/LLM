@@ -1,0 +1,11 @@
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+text = input("Enter text: ") # Take input text from user
+stop_words = set(stopwords.words('english')) # Load English stopwords
+words = word_tokenize(text.lower()) # Convert text to lowercase and tokenize
+# Remove stopwords and non-alphanumeric words
+filtered_tokens = [w for w in words if w.isalnum() and w not in stop_words] 
+print("Tokens after Stop Word Removal:", filtered_tokens) # Display tokens
