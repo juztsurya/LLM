@@ -1,0 +1,9 @@
+import gensim.downloader as api
+glove = api.load("glove-wiki-gigaword-50") # Load pretrained GloVe model
+word = input("Enter a word: ").lower() # Take input word
+# Check if word exists in vocabulary
+if word in glove:
+    print("GloVe Embedding:")
+    print(glove[word])
+else:
+    print("Word not found in GloVe vocabulary")
